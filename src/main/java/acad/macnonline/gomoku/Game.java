@@ -1,5 +1,11 @@
 package acad.macnonline.gomoku;
 
+import acad.macnonline.gomoku.component.CheckWinner;
+import acad.macnonline.gomoku.component.ComputerMove;
+import acad.macnonline.gomoku.component.DataPrinter;
+import acad.macnonline.gomoku.component.UserMove;
+import acad.macnonline.gomoku.model.GameTable;
+
 import java.util.Random;
 
 /**

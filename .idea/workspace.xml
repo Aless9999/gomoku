@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/CheckWinner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/ComputerMove.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/DataPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/GameTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Sign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/UserMove.java" afterDir="false" />
+    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add classes Game, Launcher">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/CheckWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/CheckWinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/ComputerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/DataPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/DataPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/GameTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Sign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/Sign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/UserMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/UserMove.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +63,7 @@
       <module name="gomoku" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="acad.macnonline.gomoku.*" />
+          <option name="PATTERN" value="acad.macnonline.gomoku.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,6 +86,14 @@
       <option name="presentableId" value="Default" />
       <updated>1668664159645</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add classes Game, Launcher">
+      <created>1668668629557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668668629557</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,5 +106,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add classes Game, Launcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add classes Game, Launcher" />
   </component>
 </project>

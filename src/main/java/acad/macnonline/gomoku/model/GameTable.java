@@ -1,6 +1,6 @@
-package acad.macnonline.gomoku;
+package acad.macnonline.gomoku.model;
 
-import static acad.macnonline.gomoku.Sign.EMPTY;
+import static acad.macnonline.gomoku.model.Sign.EMPTY;
 
 /**
  * @author macnonline

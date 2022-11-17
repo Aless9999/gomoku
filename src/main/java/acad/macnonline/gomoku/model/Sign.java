@@ -1,4 +1,4 @@
-package acad.macnonline.gomoku;
+package acad.macnonline.gomoku.model;
 
 /**
  * @author macnonline

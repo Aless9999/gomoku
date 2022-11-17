@@ -1,4 +1,6 @@
-package acad.macnonline.gomoku;
+package acad.macnonline.gomoku.component;
+
+import acad.macnonline.gomoku.model.GameTable;
 
 /**
  * @author macnonline
@@ -6,5 +8,6 @@ package acad.macnonline.gomoku;
  */
 public class DataPrinter {
     public void mapGame(GameTable gameTable) {
+
     }
 }
