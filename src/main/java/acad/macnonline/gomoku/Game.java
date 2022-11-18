@@ -1,16 +1,11 @@
 package acad.macnonline.gomoku;
 
 import acad.macnonline.gomoku.component.CheckWinner;
-import acad.macnonline.gomoku.component.ComputerMove;
 import acad.macnonline.gomoku.component.DataPrinter;
-import acad.macnonline.gomoku.component.UserMove;
 import acad.macnonline.gomoku.model.GameTable;
 import acad.macnonline.gomoku.model.Player;
 
 import java.util.Random;
-
-import static acad.macnonline.gomoku.model.Sign.O;
-import static acad.macnonline.gomoku.model.Sign.X;
 
 /**
  * @author macnonline
@@ -19,25 +14,25 @@ import static acad.macnonline.gomoku.model.Sign.X;
 public class Game {
     GameTable gameTable = new GameTable();
 
-    private final ComputerMove computerMove;
     private final DataPrinter dataPrinter;
     private final CheckWinner checkWinner;
-    private final UserMove userMove;
+    private final Player player1;
+    private final Player player2;
 
-    public Game(ComputerMove computerMove, DataPrinter dataPrinter,
-                CheckWinner checkWinner, UserMove userMove) {
-        this.computerMove = computerMove;
+    public Game(DataPrinter dataPrinter, CheckWinner checkWinner, Player player1, Player player2) {
         this.dataPrinter = dataPrinter;
         this.checkWinner = checkWinner;
-        this.userMove = userMove;
+        this.player1 = player1;
+        this.player2 = player2;
     }
+
 
     void play() {
         if (new Random().nextBoolean()) {
-//            computerMove.makeMove(gameTable);
+            player2.getMove().makeMove(gameTable, player2.getSign());
             dataPrinter.mapGame(gameTable);
         }
-        final Player[] players = {new Player(X, userMove), new Player(O, computerMove)};
+        final Player[] players = {player1, player2};
         while (true) {
             for (Player player : players) {
                 player.getMove().makeMove(gameTable, player.getSign());
