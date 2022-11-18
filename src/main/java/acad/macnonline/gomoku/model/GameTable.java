@@ -1,6 +1,7 @@
 package acad.macnonline.gomoku.model;
 
 import static acad.macnonline.gomoku.model.Sign.EMPTY;
+import static acad.macnonline.gomoku.model.Sign.O;
 
 /**
  * @author macnonline
@@ -19,15 +20,15 @@ public class GameTable {
 
 
 
-    public boolean isEmpty(Cell cell){
+    public boolean isEmpty(final Cell cell){
         return table[cell.getCol()][cell.getRow()]==EMPTY;
     }
 
-    public Sign getSign(Cell cell){
+    public Sign getSign(final Cell cell){
         return table[cell.getCol()][cell.getRow()];
     }
 
-    public void setSign(Cell cell,Sign sign){
+    public void setSign(final Cell cell,final Sign sign){
         table[cell.getCol()][cell.getRow()]=sign;
     }
 
