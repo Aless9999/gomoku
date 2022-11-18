@@ -14,8 +14,6 @@ public class CheckWinner {
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < 7; j++) {
                 if (gameTable.isEmpty(new Cell(i, j))) {
-
-                } else {
                     return false;
                 }
             }
@@ -38,7 +36,7 @@ public class CheckWinner {
             for (int j = 0; j < 7; j++) {
                 if (gameTable.getSign(new Cell(i, j)) == O) {
                     count++;
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
 
@@ -58,7 +56,7 @@ public class CheckWinner {
             for (int j = 0; j < 7; j++) {
                 if (gameTable.getSign(new Cell(j, i)) == O) {
                     count++;
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
 
@@ -81,7 +79,7 @@ public class CheckWinner {
                 if (gameTable.getSign(new Cell(k, j)) == O) {
                     count++;
                     k++;
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
                 } else {
@@ -102,7 +100,7 @@ public class CheckWinner {
                 if (gameTable.getSign(new Cell(j, k)) == O) {
                     count++;
                     k++;
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
                 } else {
@@ -122,7 +120,7 @@ public class CheckWinner {
                 if (gameTable.getSign(new Cell(j, k)) == O) {
                     count++;
                     k--;
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
                 } else {
@@ -145,7 +143,7 @@ public class CheckWinner {
                     k++;
                     x--;
 
-                    if (count == 3) {
+                    if (count == 5) {
                         return true;
                     }
                 } else {
@@ -157,6 +155,4 @@ public class CheckWinner {
         }
         return false;
     }
-
-
 }

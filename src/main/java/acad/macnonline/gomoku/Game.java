@@ -37,10 +37,10 @@ public class Game {
                 dataPrinter.mapGame(gameTable);
                 if (checkWinner.isWin(gameTable)) {
                     System.out.println("Computer is Win");
-                    break;
+                    return;
                 } else if (checkWinner.isDraw(gameTable)) {
                     System.out.println("Sorry is Draw");
-                    break;
+                    return;
                 }
             }
         }
