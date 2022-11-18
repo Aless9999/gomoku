@@ -1,9 +1,16 @@
 package acad.macnonline.gomoku;
 
-import acad.macnonline.gomoku.component.*;
+import acad.macnonline.gomoku.component.CheckWinner;
+import acad.macnonline.gomoku.component.ComputerMove;
+import acad.macnonline.gomoku.component.DataPrinter;
+import acad.macnonline.gomoku.component.UserMove;
 import acad.macnonline.gomoku.model.GameTable;
+import acad.macnonline.gomoku.model.Player;
 
 import java.util.Random;
+
+import static acad.macnonline.gomoku.model.Sign.O;
+import static acad.macnonline.gomoku.model.Sign.X;
 
 /**
  * @author macnonline
@@ -11,6 +18,7 @@ import java.util.Random;
  */
 public class Game {
     GameTable gameTable = new GameTable();
+
     private final ComputerMove computerMove;
     private final DataPrinter dataPrinter;
     private final CheckWinner checkWinner;
@@ -29,14 +37,13 @@ public class Game {
             computerMove.makeMove(gameTable);
             dataPrinter.mapGame(gameTable);
         }
-        final Move[] moves = {userMove, computerMove};
-
+        final Player[] players = {new Player(X, userMove), new Player(O, computerMove)};
         while (true) {
-            for (Move move : moves) {
-                move.makeMove(gameTable);
+            for (Player player : players) {
+                player.getMove().makeMove(gameTable);
                 dataPrinter.mapGame(gameTable);
-                if (checkWinner.isWin(gameTable)) {
-                    System.out.println("Computer is Win");
+                if (checkWinner.isWin(gameTable, player)) {
+                    System.out.println(player + " is WINNER!!!");
                     return;
                 } else if (checkWinner.isDraw(gameTable)) {
                     System.out.println("Sorry is Draw");
