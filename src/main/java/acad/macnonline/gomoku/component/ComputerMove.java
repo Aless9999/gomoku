@@ -2,10 +2,9 @@ package acad.macnonline.gomoku.component;
 
 import acad.macnonline.gomoku.model.Cell;
 import acad.macnonline.gomoku.model.GameTable;
+import acad.macnonline.gomoku.model.Sign;
 
 import java.util.Random;
-
-import static acad.macnonline.gomoku.model.Sign.O;
 
 /**
  * @author macnonline
@@ -13,7 +12,7 @@ import static acad.macnonline.gomoku.model.Sign.O;
  */
 public class ComputerMove implements Move {
     @Override
-    public void makeMove(GameTable gameTable) {
+    public void makeMove(final GameTable gameTable, final Sign sign) {
         final Cell[] freeCell = new Cell[49];
         int count = 0;
         for (int i = 0; i < 7; i++) {
@@ -24,7 +23,7 @@ public class ComputerMove implements Move {
             }
         }
         if (count > 0) {
-            gameTable.setSign(freeCell[new Random().nextInt(count)], O);
+            gameTable.setSign(freeCell[new Random().nextInt(count)], sign);
         }
 
 

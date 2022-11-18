@@ -34,19 +34,21 @@ public class Game {
 
     void play() {
         if (new Random().nextBoolean()) {
-            computerMove.makeMove(gameTable);
+//            computerMove.makeMove(gameTable);
             dataPrinter.mapGame(gameTable);
         }
         final Player[] players = {new Player(X, userMove), new Player(O, computerMove)};
         while (true) {
             for (Player player : players) {
-                player.getMove().makeMove(gameTable);
+                player.getMove().makeMove(gameTable, player.getSign());
                 dataPrinter.mapGame(gameTable);
                 if (checkWinner.isWin(gameTable, player)) {
-                    System.out.println(player + " is WINNER!!!");
+                    System.out.println(player.getSign() + " is WINNER!!!");
+                    System.out.println("GAME OVER!");
                     return;
                 } else if (checkWinner.isDraw(gameTable)) {
                     System.out.println("Sorry is Draw");
+                    System.out.println("GAME OVER!");
                     return;
                 }
             }

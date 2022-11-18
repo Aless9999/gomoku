@@ -22,7 +22,7 @@ public class CheckWinner {
         return true;
     }
 
-    public boolean isWin(GameTable gameTable, Player player) {
+    public boolean isWin(final GameTable gameTable, final Player player) {
         return isDiagonalDown(gameTable, player.getSign()) ||
                 isDiagonalUp(gameTable, player.getSign()) ||
                 isDiagonalLeft(gameTable, player.getSign()) ||
@@ -31,7 +31,7 @@ public class CheckWinner {
                 isWinCol(gameTable, player.getSign());
     }
 
-    private boolean isWinCol(GameTable gameTable, Sign sign) {
+    private boolean isWinCol(final GameTable gameTable, final Sign sign) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             for (int j = 0; j < 7; j++) {
@@ -50,7 +50,7 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isWinRow(GameTable gameTable, Sign sign) {
+    private boolean isWinRow(final GameTable gameTable, final Sign sign) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             for (int j = 0; j < 7; j++) {
@@ -70,7 +70,7 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isDiagonalUp(GameTable gameTable, Sign sign) {
+    private boolean isDiagonalUp(final GameTable gameTable, final Sign sign) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             int k = i;
@@ -91,7 +91,7 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isDiagonalDown(GameTable gameTable, Sign sign) {
+    private boolean isDiagonalDown(final GameTable gameTable, final Sign sign) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             int k = i;
@@ -112,7 +112,7 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isDiagonalRight(GameTable gameTable, Sign sign) {
+    private boolean isDiagonalRight(final GameTable gameTable, final Sign sign) {
         for (int i = 6; i > 0; i--) {
             int count = 0;
             int k = i;
@@ -132,7 +132,7 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isDiagonalLeft(GameTable gameTable, Sign sign) {
+    private boolean isDiagonalLeft(final GameTable gameTable, final Sign sign) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             int k = i;

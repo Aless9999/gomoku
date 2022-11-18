@@ -1,6 +1,7 @@
 package acad.macnonline.gomoku.component;
 
 import acad.macnonline.gomoku.model.GameTable;
+import acad.macnonline.gomoku.model.Sign;
 
 /**
  * @author macnonline
@@ -8,7 +9,7 @@ import acad.macnonline.gomoku.model.GameTable;
  */
 public class UserMove implements Move {
     @Override
-    public void makeMove(GameTable gameTable) {
+    public void makeMove(final GameTable gameTable, final Sign sign) {
 //        final Cell cell = getUserInput();
 //        if(gameTable.isEmpty(cell)){
 //            gameTable.setSign(cell,X);
