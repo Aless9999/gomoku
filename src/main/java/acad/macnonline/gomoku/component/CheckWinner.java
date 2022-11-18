@@ -2,7 +2,6 @@ package acad.macnonline.gomoku.component;
 
 import acad.macnonline.gomoku.model.Cell;
 import acad.macnonline.gomoku.model.GameTable;
-import acad.macnonline.gomoku.model.Sign;
 
 import static acad.macnonline.gomoku.model.Sign.O;
 
@@ -12,66 +11,152 @@ import static acad.macnonline.gomoku.model.Sign.O;
  */
 public class CheckWinner {
     public boolean isDraw(GameTable gameTable) {
-        return false;
-    }
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                if (gameTable.isEmpty(new Cell(i, j))) {
 
-    ;
+                } else {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     public boolean isWin(GameTable gameTable) {
-        return winnerForRow(gameTable) ||
-                winnerForCol(gameTable) ||
-                winnerForLeftDiagonal(gameTable) ||
-                winnerForRichtDiagonal(gameTable);
+        return isDiagonalDown(gameTable) ||
+                isDiagonalUp(gameTable) ||
+                isDiagonalLeft(gameTable) ||
+                isDiagonalRight(gameTable) ||
+                isWinRow(gameTable) ||
+                isWinCol(gameTable);
     }
 
-    private boolean winnerForRichtDiagonal(GameTable gameTable) {
-        return gameTable.getSign(new Cell(0, 0)) == gameTable.getSign(new Cell(1, 1)) &&
-                gameTable.getSign(new Cell(1, 1)) == gameTable.getSign(new Cell(2, 2)) &&
-                gameTable.getSign(new Cell(2, 2)) == gameTable.getSign(new Cell(3, 3)) &&
-                gameTable.getSign(new Cell(3, 3)) == gameTable.getSign(new Cell(4, 4)) &&
-                gameTable.getSign(new Cell(4, 4)) == O;
-
-    }
-
-    private boolean winnerForLeftDiagonal(GameTable gameTable) {
-        return gameTable.getSign(new Cell(4, 0)) == gameTable.getSign(new Cell(3, 1)) &&
-                gameTable.getSign(new Cell(3, 1)) == gameTable.getSign(new Cell(2, 2)) &&
-                gameTable.getSign(new Cell(2, 2)) == gameTable.getSign(new Cell(1, 3)) &&
-                gameTable.getSign(new Cell(1, 3)) == gameTable.getSign(new Cell(0, 4)) &&
-                gameTable.getSign(new Cell(0, 4)) == O;
-    }
-
-    private boolean winnerForCol(GameTable gameTable) {
-
+    boolean isWinCol(GameTable gameTable) {
         for (int i = 0; i < 7; i++) {
             int count = 0;
             for (int j = 0; j < 7; j++) {
                 if (gameTable.getSign(new Cell(i, j)) == O) {
                     count++;
-                    if(count==5){
+                    if (count == 3) {
                         return true;
                     }
-                }else {
+
+                } else {
                     count = 0;
+
+                }
+            }
+
+        }
+        return false;
+    }
+
+    boolean isWinRow(GameTable gameTable) {
+        for (int i = 0; i < 7; i++) {
+            int count = 0;
+            for (int j = 0; j < 7; j++) {
+                if (gameTable.getSign(new Cell(j, i)) == O) {
+                    count++;
+                    if (count == 3) {
+                        return true;
+                    }
+
+                } else {
+                    count = 0;
+
+                }
+            }
+
+        }
+        return false;
+    }
+
+    boolean isDiagonalUp(GameTable gameTable) {
+        for (int i = 0; i < 7; i++) {
+            int count = 0;
+            int k = i;
+            for (int j = 0; j < 7 - i; j++) {
+
+                if (gameTable.getSign(new Cell(k, j)) == O) {
+                    count++;
+                    k++;
+                    if (count == 3) {
+                        return true;
+                    }
+                } else {
+                    count = 0;
+                    k++;
                 }
             }
         }
         return false;
     }
 
-    private boolean winnerForRow(GameTable gameTable) { for (int i = 0; i < 7; i++) {
-        int count = 0;
-        for (int j = 0; j < 7; j++) {
-            if (gameTable.getSign(new Cell(j, i)) == O) {
-                count++;
-                if(count==5){
-                    return true;
+    boolean isDiagonalDown(GameTable gameTable) {
+        for (int i = 0; i < 7; i++) {
+            int count = 0;
+            int k = i;
+            for (int j = 0; j < 7 - i; j++) {
+
+                if (gameTable.getSign(new Cell(j, k)) == O) {
+                    count++;
+                    k++;
+                    if (count == 3) {
+                        return true;
+                    }
+                } else {
+                    count = 0;
+                    k++;
                 }
-            }else {
-                count = 0;
             }
         }
-    }
         return false;
     }
+
+    boolean isDiagonalRight(GameTable gameTable) {
+        for (int i = 6; i > 0; i--) {
+            int count = 0;
+            int k = i;
+            for (int j = 0; j < i; j++) {
+                if (gameTable.getSign(new Cell(j, k)) == O) {
+                    count++;
+                    k--;
+                    if (count == 3) {
+                        return true;
+                    }
+                } else {
+                    count = 0;
+                    k--;
+                }
+            }
+        }
+        return false;
+    }
+
+    boolean isDiagonalLeft(GameTable gameTable) {
+        for (int i = 0; i < 7; i++) {
+            int count = 0;
+            int k = i;
+            int x = 6;
+            for (int j = 7 - i; j > 0; j--) {
+                if (gameTable.getSign(new Cell(x, k)) == O) {
+                    count++;
+                    k++;
+                    x--;
+
+                    if (count == 3) {
+                        return true;
+                    }
+                } else {
+                    count = 0;
+                    k++;
+                    x--;
+                }
+            }
+        }
+        return false;
+    }
+
+
 }

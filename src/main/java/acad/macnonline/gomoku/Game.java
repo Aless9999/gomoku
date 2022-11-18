@@ -1,9 +1,6 @@
 package acad.macnonline.gomoku;
 
-import acad.macnonline.gomoku.component.CheckWinner;
-import acad.macnonline.gomoku.component.ComputerMove;
-import acad.macnonline.gomoku.component.DataPrinter;
-import acad.macnonline.gomoku.component.UserMove;
+import acad.macnonline.gomoku.component.*;
 import acad.macnonline.gomoku.model.GameTable;
 
 import java.util.Random;
@@ -31,38 +28,22 @@ public class Game {
         if (new Random().nextBoolean()) {
             computerMove.makeMove(gameTable);
             dataPrinter.mapGame(gameTable);
-
-            if (checkWinner.isWin(gameTable)) {
-                System.out.println("Computer is Win");
-                return;
-            } else if (checkWinner.isDraw(gameTable)) {
-                System.out.println("Sorry is Draw");
-                return;
-            }
         }
+        final Move[] moves = {userMove, computerMove};
+
         while (true) {
-            userMove.makeMove(gameTable);
-            dataPrinter.mapGame(gameTable);
-            if (checkWinner.isWin(gameTable)) {
-                System.out.println("Computer is Win");
-                break;
-            } else if (checkWinner.isDraw(gameTable)) {
-                System.out.println("Sorry is Draw");
-                break;
-            }
-            computerMove.makeMove(gameTable);
-            dataPrinter.mapGame(gameTable);
-
-            if (checkWinner.isWin(gameTable)) {
-                System.out.println("Computer is Win");
-                break;
-            } else if (checkWinner.isDraw(gameTable)) {
-                System.out.println("Sorry is Draw");
-                break;
+            for (Move move : moves) {
+                move.makeMove(gameTable);
+                dataPrinter.mapGame(gameTable);
+                if (checkWinner.isWin(gameTable)) {
+                    System.out.println("Computer is Win");
+                    break;
+                } else if (checkWinner.isDraw(gameTable)) {
+                    System.out.println("Sorry is Draw");
+                    break;
+                }
             }
         }
-
-
     }
 }
 
