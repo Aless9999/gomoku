@@ -27,7 +27,7 @@ public class Game {
     }
 
 
-    void play() {
+    public void play() {
         if (new Random().nextBoolean()) {
             player2.getMove().makeMove(gameTable, player2.getSign());
             dataPrinter.mapGame(gameTable);
