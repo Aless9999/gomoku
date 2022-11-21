@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add replacement UserMove and ComputerMove in class Game on the player1 and player2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ParserCommandLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/PlayerType.java" afterDir="false" />
+    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add ParserCommandLine and make PlayerType">
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/SizeTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserInputReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ComputerMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/DataPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/DataPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/GameTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -60,7 +66,7 @@
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="acad.macnonline.gomoku.Launcher" />
       <module name="gomoku" />
-      <option name="PROGRAM_PARAMETERS" value="Computer user" />
+      <option name="PROGRAM_PARAMETERS" value="computer computer" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="acad.macnonline.gomoku.model.*" />
@@ -149,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668807911146</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add ParserCommandLine and make PlayerType">
+      <created>1668889981480</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1668889981480</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,7 +184,8 @@
     <MESSAGE value="Add class Player simply class CheckWinner" />
     <MESSAGE value="Add fix with add parameter Sign" />
     <MESSAGE value="Add replacement UserMove and ComputerMove in class Game on the player1 and player2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add replacement UserMove and ComputerMove in class Game on the player1 and player2" />
+    <MESSAGE value="Add ParserCommandLine and make PlayerType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ParserCommandLine and make PlayerType" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -179,9 +193,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -4,7 +4,7 @@ import acad.macnonline.gomoku.component.GameFactory;
 
 /**
  * @author macnonline
- * @link http://macnonline
+ *http://macnonline
  */
 public class Launcher {
     public static void main(String[] args) {

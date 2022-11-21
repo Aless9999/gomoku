@@ -11,12 +11,15 @@ import java.util.Random;
  * @link http://macnonline
  */
 public class ComputerMove implements Move {
+    static SizeTable size = new SizeTable();
+    static int amountCell = size.size;
+
     @Override
     public void makeMove(final GameTable gameTable, final Sign sign) {
-        final Cell[] freeCell = new Cell[49];
+        final Cell[] freeCell = new Cell[amountCell * amountCell];
         int count = 0;
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < amountCell; i++) {
+            for (int j = 0; j < amountCell; j++) {
                 if (gameTable.isEmpty(new Cell(i, j))) {
                     freeCell[count++] = new Cell(i, j);
                 }

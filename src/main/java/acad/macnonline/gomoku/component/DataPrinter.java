@@ -6,12 +6,11 @@ import acad.macnonline.gomoku.model.GameTable;
  * @author macnonline
  * @link http://macnonline
  */
-public class DataPrinter {
-    void infoMessage() {
+public interface DataPrinter {
+    void printInfoMessage(String message);
 
-    }
+    void printErrorMessage(String message);
 
-    public void mapGame(GameTable gameTable) {
-
-    }
+    void mapGame(GameTable gameTable);
 }
+

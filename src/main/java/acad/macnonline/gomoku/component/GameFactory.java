@@ -50,26 +50,25 @@ public class GameFactory {
 
 
     public Game create() {
+        final GameWindow gameWindow = new GameWindow();
         Player player1;
         Player player2;
 
         if (playerType1 == USER) {
-            player1 = new Player(X, new UserMove());
+            player1 = new Player(X, new UserMove(gameWindow));
         } else {
-            player1 = new Player(O, new ComputerMove());
+            player1 = new Player(X, new ComputerMove());
         }
         if (playerType2 == COMPUTER) {
             player2 = new Player(O, new ComputerMove());
         } else {
-            player2 = new Player(X, new UserMove());
+            player2 = new Player(O, new UserMove(gameWindow));
         }
 
-        Game game = new Game(new DataPrinter(), new CheckWinner(),
+
+        return new Game(gameWindow, new CheckWinner(),
 
                 player1, player2);
-
-
-        return game;
     }
 
 }

@@ -1,30 +1,22 @@
 package acad.macnonline.gomoku.model;
 
-import static acad.macnonline.gomoku.model.Sign.EMPTY;
-import static acad.macnonline.gomoku.model.Sign.O;
+import acad.macnonline.gomoku.component.SizeTable;
 
 /**
  * @author macnonline
  * @link http://macnonline
  */
+
 public class GameTable {
-    private final Sign[][] table = {
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY},
-            {EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY}
-    };
+    SizeTable size = new SizeTable();
+    private final Sign[][] table = new Sign[size.size][size.size];
 
 
-
-    public boolean isEmpty(final Cell cell){
-        return table[cell.getCol()][cell.getRow()]==EMPTY;
+    public boolean isEmpty(final Cell cell) {
+        return table[cell.getCol()][cell.getRow()] == null;
     }
 
-    public Sign getSign(final Cell cell){
+    public Sign getSign(final Cell cell) {
         return table[cell.getCol()][cell.getRow()];
     }
 

@@ -11,9 +11,12 @@ import acad.macnonline.gomoku.model.Sign;
  * @link http://macnonline
  */
 public class CheckWinner {
+    static SizeTable size = new SizeTable();
+    static int amountCell = size.size;
+
     public boolean isDraw(GameTable gameTable) {
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 7; j++) {
+        for (int i = 0; i < amountCell; i++) {
+            for (int j = 0; j < amountCell; j++) {
                 if (gameTable.isEmpty(new Cell(i, j))) {
                     return false;
                 }
@@ -32,9 +35,9 @@ public class CheckWinner {
     }
 
     private boolean isWinCol(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < amountCell; i++) {
             int count = 0;
-            for (int j = 0; j < 7; j++) {
+            for (int j = 0; j < amountCell; j++) {
                 if (gameTable.getSign(new Cell(i, j)) == sign) {
                     count++;
                     if (count == 5) {
@@ -51,9 +54,9 @@ public class CheckWinner {
     }
 
     private boolean isWinRow(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < amountCell; i++) {
             int count = 0;
-            for (int j = 0; j < 7; j++) {
+            for (int j = 0; j < amountCell; j++) {
                 if (gameTable.getSign(new Cell(j, i)) == sign) {
                     count++;
                     if (count == 5) {
@@ -71,10 +74,10 @@ public class CheckWinner {
     }
 
     private boolean isDiagonalUp(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < amountCell; i++) {
             int count = 0;
             int k = i;
-            for (int j = 0; j < 7 - i; j++) {
+            for (int j = 0; j < amountCell - i; j++) {
 
                 if (gameTable.getSign(new Cell(k, j)) == sign) {
                     count++;
@@ -92,10 +95,10 @@ public class CheckWinner {
     }
 
     private boolean isDiagonalDown(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < amountCell; i++) {
             int count = 0;
             int k = i;
-            for (int j = 0; j < 7 - i; j++) {
+            for (int j = 0; j < amountCell - i; j++) {
 
                 if (gameTable.getSign(new Cell(j, k)) == sign) {
                     count++;
@@ -133,11 +136,11 @@ public class CheckWinner {
     }
 
     private boolean isDiagonalLeft(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < amountCell; i++) {
             int count = 0;
             int k = i;
-            int x = 6;
-            for (int j = 7 - i; j > 0; j--) {
+            int x = amountCell - 1;
+            for (int j = amountCell - i; j > 0; j--) {
                 if (gameTable.getSign(new Cell(x, k)) == sign) {
                     count++;
                     k++;

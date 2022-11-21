@@ -12,7 +12,8 @@ import java.util.Random;
  * @link http://macnonline
  */
 public class Game {
-    GameTable gameTable = new GameTable();
+
+    final GameTable gameTable = new GameTable();
 
     private final DataPrinter dataPrinter;
     private final CheckWinner checkWinner;
@@ -38,12 +39,12 @@ public class Game {
                 player.getMove().makeMove(gameTable, player.getSign());
                 dataPrinter.mapGame(gameTable);
                 if (checkWinner.isWin(gameTable, player)) {
-                    System.out.println(player.getSign() + " is WINNER!!!");
-                    System.out.println("GAME OVER!");
+                    dataPrinter.printInfoMessage(player.getSign() + " is WINNER!!!");
+                    dataPrinter.printInfoMessage("GAME OVER!");
                     return;
                 } else if (checkWinner.isDraw(gameTable)) {
-                    System.out.println("Sorry is Draw");
-                    System.out.println("GAME OVER!");
+                    dataPrinter.printInfoMessage("Sorry is Draw");
+                    dataPrinter.printInfoMessage("GAME OVER!");
                     return;
                 }
             }
