@@ -11,8 +11,8 @@ import acad.macnonline.gomoku.model.Sign;
  * @link http://macnonline
  */
 public class CheckWinner {
-    static SizeTable size = new SizeTable();
-    static int amountCell = size.size;
+
+    static int amountCell = SizeTable.size;
 
     public boolean isDraw(GameTable gameTable) {
         for (int i = 0; i < amountCell; i++) {
@@ -116,7 +116,7 @@ public class CheckWinner {
     }
 
     private boolean isDiagonalRight(final GameTable gameTable, final Sign sign) {
-        for (int i = 6; i > 0; i--) {
+        for (int i = amountCell - 1; i > 0; i--) {
             int count = 0;
             int k = i;
             for (int j = 0; j < i; j++) {

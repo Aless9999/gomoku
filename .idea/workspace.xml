@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add ParserCommandLine and make PlayerType">
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/SizeTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserInputReader.java" afterDir="false" />
+    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add gui change size GameTable">
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/LevelGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/OverSign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/StrategyMoveComputer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/strategies/NotWinnerOpponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/strategies/RandomComputerMove.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/strategies/SearchThreeSignOpponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/strategies/WinnerMoveComputer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/acad/macnonline/gomoku/LauncherTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ComputerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ComputerMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/DataPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/DataPrinter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/UserMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ParserCommandLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/ParserCommandLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/model/GameTable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -46,19 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aless/Documents/project/tic-tac-toe&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "/home/aless/Documents/project/tic-tac-toe",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="acad.macnonline.gomoku" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
       <recent name="acad.macnonline.gomoku" />
     </key>
   </component>
@@ -66,7 +78,7 @@
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="acad.macnonline.gomoku.Launcher" />
       <module name="gomoku" />
-      <option name="PROGRAM_PARAMETERS" value="computer computer" />
+      <option name="PROGRAM_PARAMETERS" value="user computer" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="acad.macnonline.gomoku.model.*" />
@@ -162,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668889981480</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add gui change size GameTable">
+      <created>1669050410327</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669050410327</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -185,19 +204,9 @@
     <MESSAGE value="Add fix with add parameter Sign" />
     <MESSAGE value="Add replacement UserMove and ComputerMove in class Game on the player1 and player2" />
     <MESSAGE value="Add ParserCommandLine and make PlayerType" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ParserCommandLine and make PlayerType" />
+    <MESSAGE value="Add gui change size GameTable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add gui change size GameTable" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

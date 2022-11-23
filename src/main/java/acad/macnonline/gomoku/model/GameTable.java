@@ -4,12 +4,12 @@ import acad.macnonline.gomoku.component.SizeTable;
 
 /**
  * @author macnonline
- * @link http://macnonline
+ * @link <a href="http://macnonline">online</a>
  */
 
 public class GameTable {
     SizeTable size = new SizeTable();
-    private final Sign[][] table = new Sign[size.size][size.size];
+    private final Sign[][] table = new Sign[SizeTable.size][SizeTable.size];
 
 
     public boolean isEmpty(final Cell cell) {

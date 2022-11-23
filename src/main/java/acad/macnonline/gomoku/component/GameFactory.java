@@ -1,6 +1,10 @@
 package acad.macnonline.gomoku.component;
 
 import acad.macnonline.gomoku.Game;
+import acad.macnonline.gomoku.component.strategies.NotWinnerOpponent;
+import acad.macnonline.gomoku.component.strategies.RandomComputerMove;
+import acad.macnonline.gomoku.component.strategies.SearchThreeSignOpponent;
+import acad.macnonline.gomoku.component.strategies.WinnerMoveComputer;
 import acad.macnonline.gomoku.model.Player;
 
 import static acad.macnonline.gomoku.component.PlayerType.COMPUTER;
@@ -17,39 +21,20 @@ public class GameFactory {
     private PlayerType playerType2;
 
     public GameFactory(final String[] args) {
-        PlayerType playerType1 = null;
-        PlayerType playerType2 = null;
-
-        for (String arg : args) {
-            if (USER.name().equalsIgnoreCase(arg)) {
-                if (playerType1 == null) {
-                    playerType1 = PlayerType.valueOf(arg.toUpperCase());
-                } else {
-                    playerType2 = PlayerType.valueOf((arg.toUpperCase()));
-                }
-
-            } else if (COMPUTER.name().equalsIgnoreCase(arg)) {
-                if (playerType1 == null) {
-                    playerType1 = PlayerType.valueOf(arg.toUpperCase());
-                } else {
-                    playerType2 = PlayerType.valueOf(arg.toUpperCase());
-                }
-            } else {
-                throw new IllegalArgumentException("Invalid parameter " + arg + ". Should be Computer or User.");
-            }
-        }
-        this.playerType1 = playerType1;
-        this.playerType2 = playerType2;
-        if (playerType1 == null) {
-            this.playerType1 = USER;
-            this.playerType2 = COMPUTER;
-        }
-
-
+        final ParserCommandLine parser = new ParserCommandLine(args);
+        ParserCommandLine.PlayerTypes playerTypes = parser.parser();
+        this.playerType1 = playerTypes.getPlayerType1();
+        this.playerType2 = playerTypes.getPlayerType2();
     }
 
 
     public Game create() {
+        final StrategyMoveComputer[] strategies = {
+                new WinnerMoveComputer(),
+                new NotWinnerOpponent(),
+                new SearchThreeSignOpponent(),
+                new RandomComputerMove()
+        };
         final GameWindow gameWindow = new GameWindow();
         Player player1;
         Player player2;
@@ -57,10 +42,10 @@ public class GameFactory {
         if (playerType1 == USER) {
             player1 = new Player(X, new UserMove(gameWindow));
         } else {
-            player1 = new Player(X, new ComputerMove());
+            player1 = new Player(X, new ComputerMove(strategies));
         }
         if (playerType2 == COMPUTER) {
-            player2 = new Player(O, new ComputerMove());
+            player2 = new Player(O, new ComputerMove(strategies));
         } else {
             player2 = new Player(O, new UserMove(gameWindow));
         }
