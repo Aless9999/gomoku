@@ -1,10 +1,7 @@
 package acad.macnonline.gomoku.component;
 
 import acad.macnonline.gomoku.Game;
-import acad.macnonline.gomoku.component.strategies.NotWinnerOpponent;
-import acad.macnonline.gomoku.component.strategies.RandomComputerMove;
-import acad.macnonline.gomoku.component.strategies.SearchThreeSignOpponent;
-import acad.macnonline.gomoku.component.strategies.WinnerMoveComputer;
+import acad.macnonline.gomoku.component.strategies.*;
 import acad.macnonline.gomoku.model.Player;
 
 import static acad.macnonline.gomoku.component.PlayerType.COMPUTER;
@@ -33,6 +30,9 @@ public class GameFactory {
                 new WinnerMoveComputer(),
                 new NotWinnerOpponent(),
                 new SearchThreeSignOpponent(),
+                new ThreeAllMove(),
+                new TooAllMove(),
+                new OneAllMove(),
                 new RandomComputerMove()
         };
         final GameWindow gameWindow = new GameWindow();

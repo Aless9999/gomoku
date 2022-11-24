@@ -5,5 +5,5 @@ package acad.macnonline.gomoku.component;
  * @link http://macnonline
  */
 public class SizeTable {
-    public static int size = 7;
+    public static int size = 15;
 }
