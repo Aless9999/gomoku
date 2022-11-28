@@ -14,8 +14,8 @@ import static acad.macnonline.gomoku.model.Sign.X;
  * @link http://macnonline
  */
 public class GameFactory {
-    private PlayerType playerType1;
-    private PlayerType playerType2;
+    private final PlayerType playerType1;
+    private final PlayerType playerType2;
 
     public GameFactory(final String[] args) {
         final ParserCommandLine parser = new ParserCommandLine(args);

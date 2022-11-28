@@ -13,8 +13,8 @@ import java.awt.event.MouseEvent;
  * @link http://macnonline
  */
 public final class GameWindow extends JFrame implements DataPrinter, UserInputReader {
-    static SizeTable size = new SizeTable();
-    static int amountCell = size.size;
+
+    static int amountCell = SizeTable.size;
     private static final int GAME_TABLE_SIZE = amountCell;
 
     private static final int FONT_SIZE = 25;
