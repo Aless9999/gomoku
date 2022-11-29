@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add new strategy OneAllMove,&#10;NotWinnerOpponent,&#10;ThreeAllMove,&#10;TooAllMove,">
-      <change afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assembly/distribution-linux.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assembly/distribution-windows.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scripts/start.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scripts/start.sh" afterDir="false" />
+    <list default="true" id="312218f8-2b88-4cdd-9cd7-075d464b7858" name="Changes" comment="Add scripts start.sh start.cmd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/SizeTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/SizeTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/acad/macnonline/gomoku/LauncherTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assembly/distribution-linux.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/assembly/distribution-linux.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assembly/distribution-windows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/assembly/distribution-windows.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/acad/macnonline/gomoku/component/CheckWinner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "/home/aless/Documents/project/testmaven",
+    "last_opened_file_path": "/home/aless/Documents/project/test",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -191,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669289144847</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add scripts start.sh start.cmd">
+      <created>1669620419013</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669620419013</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +218,8 @@
     <MESSAGE value="Add gui change size GameTable" />
     <MESSAGE value="Add packet Strategy and RandomComputerMove,&#10;SearchThreeSignOpponent,&#10;WinnerMoveComputer,&#10;NotWinnerOpponent" />
     <MESSAGE value="Add new strategy OneAllMove,&#10;NotWinnerOpponent,&#10;ThreeAllMove,&#10;TooAllMove," />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new strategy OneAllMove,&#10;NotWinnerOpponent,&#10;ThreeAllMove,&#10;TooAllMove," />
+    <MESSAGE value="Add scripts start.sh start.cmd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add scripts start.sh start.cmd" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

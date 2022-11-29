@@ -34,5 +34,9 @@
             <fileMode>755</fileMode>
             <filtered>true</filtered>
         </fileSet>
+        <fileSet>
+            <directory>.tmp/jre11-linux</directory>
+            <outputDirectory>jre</outputDirectory>
+        </fileSet>
     </fileSets>
 </assembly>

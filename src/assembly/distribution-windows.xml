@@ -33,5 +33,9 @@
             <lineEnding>windows</lineEnding>
             <filtered>true</filtered>
         </fileSet>
+        <fileSet>
+            <directory>.tmp/jre11-windows</directory>
+            <outputDirectory>jre</outputDirectory>
+        </fileSet>
     </fileSets>
 </assembly>

@@ -35,29 +35,24 @@ public class CheckWinner {
     }
 
     private boolean isWinCol(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < amountCell; i++) {
-            int count = 0;
-            for (int j = 0; j < amountCell; j++) {
-                if (gameTable.getSign(new Cell(i, j)) == sign) {
-                    count++;
-                    if (count == 5) {
-                        return true;
-                    }
 
-                } else {
-                    count = 0;
-
-                }
-            }
-        }
-        return false;
+        return isWinnerRowOrColl((i, j) -> (gameTable.getSign(new Cell(i, j)) == sign));
     }
 
     private boolean isWinRow(final GameTable gameTable, final Sign sign) {
+        return isWinnerRowOrColl((i, j) -> (gameTable.getSign(new Cell(j, i)) == sign));
+    }
+
+    @FunctionalInterface
+    private interface Lambda {
+        boolean getValue(int i, int j);
+    }
+
+    private boolean isWinnerRowOrColl(Lambda lambda) {
         for (int i = 0; i < amountCell; i++) {
             int count = 0;
             for (int j = 0; j < amountCell; j++) {
-                if (gameTable.getSign(new Cell(j, i)) == sign) {
+                if (lambda.getValue(i, j)) {
                     count++;
                     if (count == 5) {
                         return true;
@@ -73,34 +68,28 @@ public class CheckWinner {
         return false;
     }
 
-    private boolean isDiagonalUp(final GameTable gameTable, final Sign sign) {
-        for (int i = 0; i < amountCell; i++) {
-            int count = 0;
-            int k = i;
-            for (int j = 0; j < amountCell - i; j++) {
 
-                if (gameTable.getSign(new Cell(k, j)) == sign) {
-                    count++;
-                    k++;
-                    if (count == 5) {
-                        return true;
-                    }
-                } else {
-                    count = 0;
-                    k++;
-                }
-            }
-        }
-        return false;
+    private boolean isDiagonalUp(final GameTable gameTable, final Sign sign) {
+
+        return isWinnerDiagonalDownOrUp((k, j) -> (gameTable.getSign(new Cell(k, j)) == sign));
     }
 
     private boolean isDiagonalDown(final GameTable gameTable, final Sign sign) {
+        return isWinnerDiagonalDownOrUp((k, j) -> (gameTable.getSign(new Cell(j, k)) == sign));
+    }
+
+    @FunctionalInterface
+    private interface LambdaDiagonal {
+        boolean getValue(int k, int j);
+    }
+
+    private boolean isWinnerDiagonalDownOrUp(LambdaDiagonal lambdaDiagonal) {
         for (int i = 0; i < amountCell; i++) {
             int count = 0;
             int k = i;
             for (int j = 0; j < amountCell - i; j++) {
 
-                if (gameTable.getSign(new Cell(j, k)) == sign) {
+                if (lambdaDiagonal.getValue(k, j)) {
                     count++;
                     k++;
                     if (count == 5) {
