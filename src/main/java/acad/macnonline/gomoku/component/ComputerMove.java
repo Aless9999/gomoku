@@ -12,7 +12,7 @@ public class ComputerMove implements Move {
     private static StrategyMoveComputer[] strategies;
 
     public ComputerMove(final StrategyMoveComputer[] strategies) {
-        this.strategies = strategies;
+        ComputerMove.strategies = strategies;
     }
 
     @Override

@@ -7,4 +7,6 @@ package acad.macnonline.gomoku.component;
 public enum LevelGame {
     LEVEL1,
     LEVEL2
+
+
 }

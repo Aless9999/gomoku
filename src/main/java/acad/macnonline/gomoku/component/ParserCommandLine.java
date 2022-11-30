@@ -1,5 +1,7 @@
 package acad.macnonline.gomoku.component;
 
+import static acad.macnonline.gomoku.component.LevelGame.LEVEL1;
+import static acad.macnonline.gomoku.component.LevelGame.LEVEL2;
 import static acad.macnonline.gomoku.component.PlayerType.COMPUTER;
 import static acad.macnonline.gomoku.component.PlayerType.USER;
 
@@ -18,6 +20,7 @@ public class ParserCommandLine {
     public PlayerTypes parser() {
         PlayerType playerType1 = null;
         PlayerType playerType2 = null;
+        LevelGame levelGame = null;
 
         for (String arg : args) {
             if (USER.name().equalsIgnoreCase(arg)) {
@@ -33,18 +36,26 @@ public class ParserCommandLine {
                 } else {
                     playerType2 = PlayerType.valueOf(arg.toUpperCase());
                 }
+            } else if (LEVEL1.name().equalsIgnoreCase(arg)) {
+                levelGame = LevelGame.valueOf(arg.toUpperCase());
+            } else if (LEVEL2.name().equalsIgnoreCase(arg)) {
+                levelGame = LevelGame.valueOf(arg.toUpperCase());
+
             } else {
                 throw new IllegalArgumentException("Invalid parameter " + arg + ". Should be Computer or User.");
             }
         }
+        if (levelGame == null) {
+            levelGame = LEVEL2;
+        }
 
         if (playerType1 == null) {
-            return new PlayerTypes(USER, COMPUTER);
+            return new PlayerTypes(USER, COMPUTER, levelGame);
 
         } else if (playerType2 == null) {
-            return new PlayerTypes(USER, playerType1);
+            return new PlayerTypes(USER, playerType1, levelGame);
         } else {
-            return new PlayerTypes(playerType1, playerType2);
+            return new PlayerTypes(playerType1, playerType2, levelGame);
         }
 
 
@@ -53,6 +64,13 @@ public class ParserCommandLine {
     public static class PlayerTypes {
         private final PlayerType playerType1;
         private final PlayerType playerType2;
+        private final LevelGame levelGame;
+
+        public PlayerTypes(PlayerType playerType1, PlayerType playerType2, LevelGame levelGame) {
+            this.playerType1 = playerType1;
+            this.playerType2 = playerType2;
+            this.levelGame = levelGame;
+        }
 
         public PlayerType getPlayerType1() {
             return playerType1;
@@ -62,9 +80,10 @@ public class ParserCommandLine {
             return playerType2;
         }
 
-        private PlayerTypes(PlayerType playerType1, PlayerType playerType2) {
-            this.playerType1 = playerType1;
-            this.playerType2 = playerType2;
+        public LevelGame getLevelGame() {
+            return levelGame;
         }
+
+
     }
 }
